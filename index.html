@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1115 Clawson Court</title>
+<meta name="description" content="Proposed new construction by Keen Building Co., designed by Frusterio. 4 bedrooms, 4.5 baths, approx. 4,144 heated sq ft on a cul-de-sac in Charlotte, NC 28209.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: the page reads like the architect's drawing set. Each section is a "sheet" (A-1 Elevations, A-2 Plans...) with a title-block label, set on plaster white with Agency red used only as the ink on sheet numbers and the price. */
+:root{
+  --paper:#F7F8F6;      /* Agency Plaster */
+  --sheet:#FFFFFF;      /* Canvas */
+  --ink:#161616;        /* Iron, softened */
+  --muted:#5E5F5B;
+  --rule:#D9DAD5;
+  --brick:#ECE7DE;      /* the painted brick of the elevation */
+  --red:#ED2127;        /* Agency red, PMS 199C */
+  --on-photo:#FFFFFF;
+  --display:"Playfair Display", "Didot", Georgia, serif;
+  --label:"Barlow Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --body:"Roboto", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121312; --sheet:#1A1B1A; --ink:#EDEDE9; --muted:#A3A49F; --rule:#2E302D; --brick:#24231F; --red:#F2464B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121312; --sheet:#1A1B1A; --ink:#EDEDE9; --muted:#A3A49F; --rule:#2E302D; --brick:#24231F; --red:#F2464B;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:300 17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.label{font:500 13px/1 var(--label);letter-spacing:.2em;text-transform:uppercase}
+.num{font-variant-numeric:tabular-nums lining-nums}
+
+/* Top bar */
+.top{position:absolute;inset:0 0 auto 0;z-index:5;color:var(--on-photo)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{height:30px;width:auto}
+.top-links{display:flex;gap:22px;align-items:center}
+.top-links a{text-decoration:none}
+.pill{border:1px solid rgba(255,255,255,.7);padding:8px 12px 7px;border-radius:2px}
+
+/* Hero */
+.hero{position:relative;background:#222;color:var(--on-photo)}
+.hero img{width:100%;height:min(86svh,820px);min-height:520px;object-fit:cover;object-position:50% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 48%,rgba(0,0,0,.66) 100%);pointer-events:none}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2}
+.hero-copy .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;padding-bottom:clamp(28px,5vw,56px)}
+.hero h1{font-size:clamp(44px,7.4vw,104px);letter-spacing:-.01em}
+.hero h1 em{font-style:italic}
+.hero .kicker{margin-bottom:18px;opacity:.92}
+.price-block{text-align:right}
+.price{font:400 clamp(30px,3.6vw,48px)/1 var(--display)}
+.price-note{margin-top:10px;opacity:.88}
+
+/* Facts */
+.facts{background:var(--sheet);border-bottom:1px solid var(--rule)}
+.facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr)}
+.facts li{padding:26px 18px;border-left:1px solid var(--rule)}
+.facts li:first-child{border-left:0;padding-left:0}
+.facts b{display:block;font:400 clamp(26px,2.6vw,34px)/1 var(--display);margin-bottom:8px}
+.facts span{color:var(--muted)}
+
+/* Sheets */
+.sheet{padding:clamp(64px,9vw,120px) 0}
+.sheet + .sheet{border-top:1px solid var(--rule)}
+.titleblock{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:clamp(28px,4vw,48px)}
+.titleblock .sheetno{color:var(--red);font:600 15px/1 var(--label);letter-spacing:.14em}
+.titleblock h2{font-size:clamp(30px,3.4vw,46px)}
+.titleblock .meta{color:var(--muted)}
+
+/* Intro */
+.intro{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,96px);align-items:start}
+.intro h2{font-size:clamp(32px,3.8vw,52px)}
+.intro h2 em{font-style:italic}
+.intro p{margin:0 0 1.1em;max-width:62ch}
+.credits{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+.credits div{display:flex;flex-direction:column;gap:6px}
+.credits .label{color:var(--muted)}
+.credits strong{font:400 22px/1.2 var(--display)}
+
+/* Elevations */
+.elev{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.4vw,18px)}
+.elev figure{margin:0}
+.elev figure:first-child{grid-column:1 / -1}
+.elev button{all:unset;cursor:zoom-in;display:block;width:100%}
+.elev button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.elev img{width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--brick)}
+.elev figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:10px;color:var(--muted)}
+
+/* Plans */
+.tabs{display:flex;gap:0;border:1px solid var(--ink);width:max-content;max-width:100%;margin-bottom:28px;flex-wrap:wrap}
+.tabs button{appearance:none;border:0;background:transparent;color:var(--ink);font:500 14px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;padding:14px 20px;cursor:pointer}
+.tabs button + button{border-left:1px solid var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.plan{display:grid;grid-template-columns:7fr 4fr;gap:clamp(24px,4vw,56px);align-items:start}
+.plan[hidden]{display:none}
+.plan-img{background:#fff;border:1px solid var(--rule);padding:clamp(6px,1vw,12px)}
+.plan-img button{all:unset;cursor:zoom-in;display:block}
+.plan-side h3{font-size:clamp(26px,2.4vw,34px);margin-bottom:6px}
+.plan-side .sf{color:var(--red);margin-bottom:18px}
+.plan-side p{margin:0 0 20px;max-width:46ch}
+.schedule{width:100%;border-collapse:collapse;font-size:15px}
+.schedule th{font:500 12px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 0 10px;border-bottom:1px solid var(--ink)}
+.schedule th:last-child,.schedule td:last-child{text-align:right}
+.schedule td{padding:10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.schedule td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:16px}
+
+/* Selections */
+.sel-head{display:flex;justify-content:space-between;align-items:end;gap:16px 40px;flex-wrap:wrap;margin-bottom:28px}
+.sel-head p{margin:0;max-width:58ch}
+.boards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px)}
+.boards button{all:unset;cursor:zoom-in;display:block;background:var(--sheet);border:1px solid var(--rule)}
+.boards button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.boards img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.boards span{display:block;padding:10px 12px 11px;border-top:1px solid var(--rule)}
+
+/* Location */
+.loc{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.loc h3{font-size:24px;margin-bottom:10px}
+.loc p{margin:0;color:var(--muted)}
+.loc ul{list-style:none;margin:0;padding:0}
+.loc li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.loc li span:last-child{color:var(--muted)}
+.fine{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* Contact */
+.contact{background:#141414;color:#F7F8F6}
+.contact .inner{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(28px,6vw,80px);align-items:center;padding:clamp(56px,8vw,104px) 0}
+.contact img.headshot{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;background:#eee}
+.contact h2{font-size:clamp(34px,4vw,56px);margin:14px 0 8px}
+.contact .role{opacity:.8;margin-bottom:28px}
+.contact .label{color:var(--red)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:500 15px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;padding:16px 22px;border:1px solid currentColor}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.contact-lines{display:grid;gap:6px;font-size:16px;opacity:.9}
+.contact-lines a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.contact .agency{display:flex;align-items:center;gap:18px;margin-top:32px}
+.contact .agency img{height:44px;width:auto}
+.contact .agency .rp{height:22px}
+
+/* Footer */
+footer{padding:36px 0 48px;font-size:12px;line-height:1.6;color:var(--muted)}
+footer p{margin:0 0 10px;max-width:110ch}
+
+/* Lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%}
+dialog.lb::backdrop{background:rgba(10,10,10,.92)}
+.lb-inner{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto;color:#fff}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+.lb-stage{display:flex;align-items:center;justify-content:center;padding:0 clamp(8px,6vw,80px);min-height:0}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain}
+.lb-nav{display:flex;justify-content:center;gap:12px;padding:14px}
+.lb button{appearance:none;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);font:500 13px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;padding:12px 16px;cursor:pointer}
+
+@media (max-width:980px){
+  .facts ul{grid-template-columns:repeat(3,1fr)}
+  .facts li:nth-child(4){border-left:0;padding-left:0}
+  .facts li:nth-child(n+4){border-top:1px solid var(--rule)}
+  .intro,.plan{grid-template-columns:1fr}
+  .boards{grid-template-columns:repeat(3,1fr)}
+  .loc{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .top-links .hide-sm{display:none}
+  .hero img{min-height:560px;object-position:42% 40%}
+  .price-block{text-align:left}
+  .facts ul{grid-template-columns:repeat(2,1fr)}
+  .facts li{border-left:0!important;padding-left:0!important;border-top:1px solid var(--rule)}
+  .facts li:nth-child(-n+2){border-top:0}
+  .facts li:nth-child(even){padding-left:16px!important;border-left:1px solid var(--rule)!important}
+  .titleblock{grid-template-columns:1fr}
+  .titleblock .meta{order:3}
+  .elev{grid-template-columns:1fr}
+  .boards{grid-template-columns:repeat(2,1fr)}
+  .contact .inner{grid-template-columns:1fr}
+  .contact img.headshot{max-width:280px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero img{animation:settle 1.6s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes settle{from{transform:scale(1.035)}to{transform:scale(1)}}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="The Agency Charlotte">
+      <img src="img/agency-secondary-white.svg" alt="The Agency">
+    </a>
+    <nav class="top-links label" aria-label="Sections">
+      <a class="hide-sm" href="#plans">Plans</a>
+      <a class="hide-sm" href="#selections">Selections</a>
+      <a class="pill" href="#contact">Contact Ryan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="1115 Clawson Court">
+    <img src="img/01-front.jpg" alt="Rendering of the proposed front elevation: white painted brick, siding accents, steep layered gables and a two-car garage">
+    <div class="hero-copy">
+      <div class="wrap">
+        <div>
+          <div class="label kicker">Coming Soon &nbsp;·&nbsp; Proposed New Construction &nbsp;·&nbsp; Charlotte, NC 28209</div>
+          <h1>1115 Clawson <em>Court</em></h1>
+        </div>
+        <div class="price-block">
+          <div class="price num">$2,275,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Key facts">
+    <div class="wrap">
+      <ul>
+        <li><b class="num">4</b><span class="label">Bedrooms</span></li>
+        <li><b class="num">4.5</b><span class="label">Baths</span></li>
+        <li><b class="num">4,144</b><span class="label">Heated sq ft, approx.</span></li>
+        <li><b class="num">3</b><span class="label">Levels</span></li>
+        <li><b class="num">2</b><span class="label">Car garage</span></li>
+        <li><b class="num">0.21</b><span class="label">Acre · cul-de-sac</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="intro-h">
+    <div class="wrap">
+      <div class="titleblock">
+        <span class="sheetno">A-0</span>
+        <span class="label">The Residence</span>
+        <span class="label meta">Frusterio job 4922 · Nov 2026</span>
+      </div>
+      <div class="intro">
+        <h2 id="intro-h">A European-inspired new build on a quiet cul-de-sac, with the finishes <em>still open</em>.</h2>
+        <div>
+          <p>White painted brick, siding accents and steep layered gables give this home a classic presence from the street. Inside, an open-to-above foyer leads to a dining room with a wood-beamed ceiling, and the main level is finished with 10-foot ceilings throughout.</p>
+          <p>The kitchen centers on a 10-foot island and opens to the living room, where a fireplace and beamed ceiling anchor the space and French doors step out to the covered rear porch. A working scullery, pantry, garage drop zone and powder room keep everyday life running quietly behind the scenes.</p>
+          <p>Upstairs, the primary suite has its own foyer, a sun room, a bath with separate vanities, tub, shower and enclosed water closet, and a generous walk-in closet. Two more bedrooms each have their own bath, joined by an upper den and the laundry. The third level adds a fourth bedroom suite and a bonus room with a kitchenette and ceilings rising to 12 feet.</p>
+          <p>Because the home is in the planning stage, early buyers can still help shape the finish selections with the builder.</p>
+          <div class="credits">
+            <div><span class="label">Built by</span><strong>Keen Building Co.</strong></div>
+            <div><span class="label">Designed by</span><strong>Frusterio</strong></div>
+            <div><span class="label">Status</span><strong>Proposed · Pre-sale</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" id="elevations" aria-labelledby="elev-h">
+    <div class="wrap">
+      <div class="titleblock">
+        <span class="sheetno">A-1</span>
+        <h2 id="elev-h">Elevations</h2>
+        <span class="label meta">Renderings · Illustrative</span>
+      </div>
+      <div class="elev">
+        <figure><button type="button" data-lb="elev" data-i="0" aria-label="Enlarge front elevation"><img src="img/01-front.jpg" alt="Front elevation rendering" loading="lazy"></button><figcaption class="label"><span>Front</span><span>01 / 04</span></figcaption></figure>
+        <figure><button type="button" data-lb="elev" data-i="1" aria-label="Enlarge rear elevation"><img src="img/02-rear.jpg" alt="Rear elevation rendering with covered porch" loading="lazy"></button><figcaption class="label"><span>Rear · covered porch</span><span>02</span></figcaption></figure>
+        <figure><button type="button" data-lb="elev" data-i="2" aria-label="Enlarge right elevation"><img src="img/03-right.jpg" alt="Right side elevation rendering" loading="lazy"></button><figcaption class="label"><span>Right</span><span>03</span></figcaption></figure>
+        <figure><button type="button" data-lb="elev" data-i="3" aria-label="Enlarge left elevation"><img src="img/04-left.jpg" alt="Left side elevation rendering" loading="lazy"></button><figcaption class="label"><span>Left</span><span>04</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" id="plans" aria-labelledby="plans-h">
+    <div class="wrap">
+      <div class="titleblock">
+        <span class="sheetno">A-2</span>
+        <h2 id="plans-h">Floor Plans</h2>
+        <span class="label meta num">1,466 + 1,882 + 796 = 4,144 sq ft</span>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Choose a level">
+        <button type="button" role="tab" id="tab-1" aria-controls="plan-1" aria-selected="true">First floor</button>
+        <button type="button" role="tab" id="tab-2" aria-controls="plan-2" aria-selected="false" tabindex="-1">Second floor</button>
+        <button type="button" role="tab" id="tab-3" aria-controls="plan-3" aria-selected="false" tabindex="-1">Third floor</button>
+      </div>
+
+      <div class="plan" id="plan-1" role="tabpanel" aria-labelledby="tab-1">
+        <div class="plan-img"><button type="button" data-lb="plan" data-i="0" aria-label="Enlarge first floor plan"><img src="img/plan-first.jpg" alt="First floor plan with room dimensions" loading="lazy"></button></div>
+        <div class="plan-side">
+          <h3>First floor</h3>
+          <div class="label sf num">Approx. 1,466 heated sq ft · 10-ft ceilings</div>
+          <p>Kitchen, living and dining connect around a 10-foot island, with the scullery, pantry and drop zone tucked behind.</p>
+          <table class="schedule">
+            <thead><tr><th scope="col">Room</th><th scope="col">Approx. size</th></tr></thead>
+            <tbody>
+              <tr><td>Living room · fireplace, beamed ceiling</td><td>18'10" × 18'10"</td></tr>
+              <tr><td>Kitchen · 10-ft island</td><td>13'4" × 17'6"</td></tr>
+              <tr><td>Dining room · wood-beamed ceiling</td><td>13'8" × 14'2"</td></tr>
+              <tr><td>Scullery</td><td>14'10" × 7'0"</td></tr>
+              <tr><td>Drop zone</td><td>8'6" × 6'10"</td></tr>
+              <tr><td>Pantry</td><td>4'6" × 6'4"</td></tr>
+              <tr><td>Powder room</td><td>6'0" × 6'10"</td></tr>
+              <tr><td>Covered rear porch</td><td>18'10" × 9'3"</td></tr>
+              <tr><td>Two-car garage</td><td>24'10" × 23'2"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="plan" id="plan-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <div class="plan-img"><button type="button" data-lb="plan" data-i="1" aria-label="Enlarge second floor plan"><img src="img/plan-second.jpg" alt="Second floor plan with room dimensions" loading="lazy"></button></div>
+        <div class="plan-side">
+          <h3>Second floor</h3>
+          <div class="label sf num">Approx. 1,882 heated sq ft</div>
+          <p>The primary suite sits behind its own foyer, with a sun room off the bedroom. Bedrooms 2 and 3 each have a private bath.</p>
+          <table class="schedule">
+            <thead><tr><th scope="col">Room</th><th scope="col">Approx. size</th></tr></thead>
+            <tbody>
+              <tr><td>Owner's bedroom</td><td>20'4" × 14'6"</td></tr>
+              <tr><td>Owner's sun room</td><td>13'4" × 7'6"</td></tr>
+              <tr><td>Owner's bath</td><td>12'2" × 16'10"</td></tr>
+              <tr><td>Owner's closet</td><td>8'6" × 12'0"</td></tr>
+              <tr><td>Bedroom 2 · bath 2</td><td>12'4" × 13'6"</td></tr>
+              <tr><td>Bedroom 3 · bath 3</td><td>12'10" × 13'6"</td></tr>
+              <tr><td>Upper den</td><td>13'4" × 12'6"</td></tr>
+              <tr><td>Laundry</td><td>13'4" × 7'0"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="plan" id="plan-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+        <div class="plan-img"><button type="button" data-lb="plan" data-i="2" aria-label="Enlarge third floor plan"><img src="img/plan-third.jpg" alt="Third floor plan with room dimensions" loading="lazy"></button></div>
+        <div class="plan-side">
+          <h3>Third floor</h3>
+          <div class="label sf num">Approx. 796 heated sq ft</div>
+          <p>A fourth bedroom suite and a bonus room with kitchenette, with ceilings rising to 12 feet. Room for guests, play or a home office.</p>
+          <table class="schedule">
+            <thead><tr><th scope="col">Room</th><th scope="col">Approx. size</th></tr></thead>
+            <tbody>
+              <tr><td>Bonus room</td><td>17'6" × 18'2"</td></tr>
+              <tr><td>Kitchenette</td><td>6'8" × 10'3"</td></tr>
+              <tr><td>Bedroom 4</td><td>12'6" × 14'6"</td></tr>
+              <tr><td>Walk-in closet</td><td>12'2" × 5'10"</td></tr>
+              <tr><td>Bath 4</td><td>10'0" × 5'10"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="fine">Approximate dimensions from the Frusterio plan set (job 4922-4511-1026, 11/3/26). Plans are not to scale and are subject to change; square footage is per plan, not as-built.</p>
+    </div>
+  </section>
+
+  <section class="sheet" id="selections" aria-labelledby="sel-h">
+    <div class="wrap">
+      <div class="titleblock">
+        <span class="sheetno">A-3</span>
+        <h2 id="sel-h">Design Selections</h2>
+        <span class="label meta num">16 boards · Keen Building Co.</span>
+      </div>
+      <div class="sel-head">
+        <p>The builder's design intent for each room: paint, stain, stone, tile, plumbing and lighting. Early buyers can work with Keen to refine these before construction.</p>
+      </div>
+      <div class="boards" id="boards"></div>
+    </div>
+  </section>
+
+  <section class="sheet" id="location" aria-labelledby="loc-h">
+    <div class="wrap">
+      <div class="titleblock">
+        <span class="sheetno">A-4</span>
+        <h2 id="loc-h">Location</h2>
+        <span class="label meta">Charlotte · 28209</span>
+      </div>
+      <div class="loc">
+        <div>
+          <h3>The setting</h3>
+          <p>A 0.21-acre lot on a quiet cul-de-sac, minutes from Freedom Park and Park Road Shopping Center.</p>
+        </div>
+        <div>
+          <h3>Nearby</h3>
+          <ul>
+            <li><span>Freedom Park</span><span class="label">Minutes</span></li>
+            <li><span>Park Road Shopping Center</span><span class="label">Minutes</span></li>
+            <li><span>South End</span><span class="label">Minutes</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Schools</h3>
+          <ul>
+            <li><span>Selwyn</span><span class="label">Elementary</span></li>
+            <li><span>Alexander Graham</span><span class="label">Middle</span></li>
+            <li><span>Myers Park</span><span class="label">High</span></li>
+          </ul>
+          <p class="fine">CMS attendance zones as of November 2026. Assignments can change; confirm with Charlotte-Mecklenburg Schools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="inner">
+        <img class="headshot" src="img/ryan.jpg" alt="Ryan Palmer">
+        <div>
+          <span class="label">Plans, specifications and pricing</span>
+          <h2 id="contact-h">Ryan Palmer</h2>
+          <div class="role">Founding Partner, Luxury Division · The Agency Charlotte</div>
+          <div class="cta">
+            <a class="btn primary" href="tel:+15089542159">Call or text</a>
+            <a class="btn" href="mailto:ryan.palmer@theagencyre.com?subject=1115%20Clawson%20Court">Email Ryan</a>
+          </div>
+          <div class="contact-lines">
+            <a href="tel:+15089542159">(508) 954-2159</a>
+            <a href="mailto:ryan.palmer@theagencyre.com?subject=1115%20Clawson%20Court">ryan.palmer@theagencyre.com</a>
+            <span>3540 Toringdon Way, Suite 125, Charlotte, NC 28277</span>
+          </div>
+          <div class="agency">
+            <img src="img/agency-secondary-white.svg" alt="The Agency">
+            <img class="rp" src="img/rp-white.png" alt="Realty Ryan">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Proposed new construction; the existing home on the lot will be removed. Renderings, plans and design selections are illustrative. Final design, specifications, materials and pricing may vary and are subject to change without notice. Square footage and room dimensions are approximate and taken from plans, not as-built measurements. Information is deemed reliable but not guaranteed; buyers should verify all information independently.</p>
+    <p>THE AGENCY CHARLOTTE IS AN INDEPENDENTLY OWNED AND OPERATED FRANCHISEE OF THE AGENCY REAL ESTATE FRANCHISING, LLC. Equal Housing Opportunity.</p>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Image viewer">
+  <div class="lb-inner">
+    <div class="lb-bar"><span class="label" id="lb-cap"></span><button type="button" id="lb-close">Close</button></div>
+    <div class="lb-stage"><img id="lb-img" alt=""></div>
+    <div class="lb-nav"><button type="button" id="lb-prev">Previous</button><span class="label num" id="lb-count" style="align-self:center;min-width:64px;text-align:center"></span><button type="button" id="lb-next">Next</button></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var boards = [
+    ["01-exterior","Exterior"],["02-foyer","Foyer"],["03-living-room","Living room"],["04-kitchen","Kitchen"],
+    ["05-dining","Dining room"],["06-scullery","Scullery"],["07-drop-zone","Drop zone"],["08-laundry","Laundry"],
+    ["09-powder","Powder room"],["10-upper-den","Upper den"],["11-owners-bedroom","Owner's bedroom"],["12-owners-bath","Owner's bath"],
+    ["13-bathroom-2","Bathroom 2"],["14-bathroom-3","Bathroom 3"],["15-bathroom-4","Bathroom 4"],["16-bonus-room","Bonus room"]
+  ];
+  var sets = {
+    elev: [["img/01-front.jpg","Front elevation"],["img/02-rear.jpg","Rear elevation"],["img/03-right.jpg","Right elevation"],["img/04-left.jpg","Left elevation"]],
+    plan: [["img/plan-first.jpg","First floor · approx. 1,466 sq ft"],["img/plan-second.jpg","Second floor · approx. 1,882 sq ft"],["img/plan-third.jpg","Third floor · approx. 796 sq ft"]],
+    sel: boards.map(function(b){return ["img/clawson-"+b[0]+".jpg", b[1]+" · design selections"];})
+  };
+
+  var grid = document.getElementById("boards");
+  boards.forEach(function(b,i){
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.dataset.lb = "sel"; btn.dataset.i = i;
+    btn.setAttribute("aria-label","Enlarge "+b[1]+" selections board");
+    var img = document.createElement("img");
+    img.src = "img/clawson-"+b[0]+".jpg"; img.alt = b[1]+" design selections board"; img.loading = "lazy";
+    var cap = document.createElement("span"); cap.className = "label"; cap.textContent = String(i+1).padStart(2,"0")+"  "+b[1];
+    btn.appendChild(img); btn.appendChild(cap); grid.appendChild(btn);
+  });
+
+  // Plan tabs
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function selectTab(t){
+    tabs.forEach(function(x){
+      var on = x === t;
+      x.setAttribute("aria-selected", on ? "true" : "false");
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener("click", function(){ selectTab(t); });
+    t.addEventListener("keydown", function(e){
+      var n = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if(!n) return; e.preventDefault();
+      var next = tabs[(i+n+tabs.length)%tabs.length]; selectTab(next); next.focus();
+    });
+  });
+
+  // Lightbox
+  var dlg = document.getElementById("lb"), im = document.getElementById("lb-img"),
+      cap = document.getElementById("lb-cap"), cnt = document.getElementById("lb-count"), cur = null, idx = 0, opener = null;
+  function show(){ var s = sets[cur][idx]; im.src = s[0]; im.alt = s[1]; cap.textContent = s[1]; cnt.textContent = (idx+1)+" / "+sets[cur].length; }
+  function step(d){ idx = (idx + d + sets[cur].length) % sets[cur].length; show(); }
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-lb]"); if(!b) return;
+    cur = b.dataset.lb; idx = +b.dataset.i; opener = b; show();
+    if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute("open",""); }
+  });
+  document.getElementById("lb-close").addEventListener("click", function(){ dlg.close(); });
+  document.getElementById("lb-prev").addEventListener("click", function(){ step(-1); });
+  document.getElementById("lb-next").addEventListener("click", function(){ step(1); });
+  dlg.addEventListener("keydown", function(e){ if(e.key==="ArrowRight") step(1); if(e.key==="ArrowLeft") step(-1); });
+  dlg.addEventListener("click", function(e){ if(e.target.classList.contains("lb-stage")) dlg.close(); });
+  dlg.addEventListener("close", function(){ if(opener) opener.focus(); });
+})();
+</script>
+</body>
+</html>
